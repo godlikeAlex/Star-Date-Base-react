@@ -1,28 +1,64 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+
+class swapiApi {
+    _baseApi = 'https://swapi.co/api';
+
+    async getResource(url) {
+            const res = await fetch(`${this._baseApi}${url}`);
+
+            if(!res.ok){
+              throw new Error(`Cloud not fetch ${url}, received ${res.status}`);
+            }
+
+            return await res.json();
+    }
+
+    async getAllPeople(){
+      const res = await this.getResource('/people/');
+      return res.results;
+    }
+
+    getPerson(id){
+      return this.getResource(`/people/${id}/`)
+    }
+
+    async getAllPlanets(){
+        const res = await this.getResource('/planets/');
+        return res.results;
+    }
+
+    getPlanet(id){
+        return this.getResource(`/planets/${id}/`)
+    }
+
+    async getAllStarships(){
+        const res = await this.getResource('/starships/');
+        return res.results;
+    }
+
+    getStarship(id){
+        return this.getResource(`/starships/${id}/`)
+    }
+
+
+
+}
+
+const api = new swapiApi();
+
+api.getAllPeople()
+    .then(body=>{
+      console.log(body)
+    });
+
+console.log()
 
 class App extends Component {
   render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+      return (
+          <h1>Hello world</h1>
+      );
+    };
 }
 
 export default App;

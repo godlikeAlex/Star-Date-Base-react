@@ -1,5 +1,3 @@
-import React, { Component } from 'react';
-
 class swapiApi {
     _baseApi = 'https://swapi.co/api';
 
@@ -44,21 +42,5 @@ class swapiApi {
 
 }
 
-const api = new swapiApi();
 
-api.getAllPeople()
-    .then(body=>{
-      console.log(body)
-    });
 
-console.log()
-
-class App extends Component {
-  render() {
-      return (
-          <h1>Hello world</h1>
-      );
-    };
-}
-
-export default App;

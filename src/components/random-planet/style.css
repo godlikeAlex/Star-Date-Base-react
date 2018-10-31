@@ -1,0 +1,40 @@
+.random-planet
+{
+    padding:25px;
+    margin: 35px auto auto;
+    display: flex;
+    align-items: center;
+}
+
+.planet-image
+{
+    width: 130px;
+    height: 130px;
+    background: #3a3939;
+}
+
+.planet-image img
+{
+    width: 100%;
+}
+
+.planet-info
+{
+    margin-left: 25px;
+}
+
+.planet-info__list-info
+{
+    list-style: none;
+    padding-left: 10px;
+}
+
+.planet-info__list-info li
+{
+    border-top: 1px solid #3a3939;
+    padding:5px;
+}
+
+.planet-info__list-info li:last-child{
+    border-bottom: 1px solid #3a3939;
+}

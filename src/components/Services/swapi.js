@@ -1,4 +1,4 @@
-class swapiApi {
+class swapiService {
     _baseApi = 'https://swapi.co/api';
 
     async getResource(url) {
@@ -37,10 +37,8 @@ class swapiApi {
     getStarship(id){
         return this.getResource(`/starships/${id}/`)
     }
-
-
-
 }
 
+export default swapiService;
 
 

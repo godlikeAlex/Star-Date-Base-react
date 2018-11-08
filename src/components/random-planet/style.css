@@ -38,3 +38,9 @@
 .planet-info__list-info li:last-child{
     border-bottom: 1px solid #3a3939;
 }
+
+.btn-info
+{
+    margin-top: 15px;
+}
+
